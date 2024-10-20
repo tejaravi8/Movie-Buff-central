@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Marvel Cinematic Universe Fan Page</title>
+    
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    header {
+        text-align: center;
+        padding: 2rem;
+        background-color: #20232a;
+        color: white;
+    }
+    h1 {
+        margin: 0;
+    }
+    #movie-posters {
+        padding: 2rem;
+        text-align: center;
+    }
+    .posters-grid {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .posters-grid img {
+        width: 200px;
+        height: 300px;
+    }
+    #character-bios {
+    padding: 2rem;
+    background-color: white;
+}
+.character {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.character img {
+    width: 150px;
+    height: 225px;
+    object-fit: cover;
+}
+#movie-trailers {
+    padding: 2rem;
+    text-align: center;
+}
+#movie-trailers iframe {
+    margin: 1rem;
+}
+#quote-of-the-day {
+    padding: 2rem;
+    background-color: #eaeaea;
+    text-align: center;
+}
+#quote-display {
+    font-style: italic;
+    font-size: 1.5rem;
+}
+#trivia-quiz {
+    padding: 2rem;
+    background-color: #f4f4f4;
+}
+.quiz-question {
+    margin-bottom: 1rem;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Marvel Cinematic Universe Fan Page</h1>
+        <p>Explore the amazing world of superheroes, cosmic battles, and the stories that have captivated millions around the globe.</p>
+    </header>
+    
+    <section id="movie-posters">
+        <h2>Popular Movies</h2>
+        <div class="posters-grid">
+            <img src="https://www.vintagemovieposters.co.uk/wp-content/uploads/2023/03/IMG_1887-scaled.jpeg" alt="Avengers Movie Poster">
+            <img src="https://cdn.wallpaper.tn/large/Iron-Man-Movie-Wallpaper-160650.jpg" alt="Iron Man Movie Poster">
+            <img src="https://i.pinimg.com/564x/5f/f0/af/5ff0af99c2c5c4f79ba306da9153c8ac.jpg" alt="Thor Movie Poster">
+            <!-- Add more posters as needed -->
+        </div>
+    </section>
+
+    <section id="character-bios">
+        <h2>Character Bios</h2>
+        <div class="character">
+            <img src="https://cdn.wallpaper.tn/large/Iron-Man-Movie-Wallpaper-160649.jpg" alt="Iron Man">
+            <h3>Iron Man (Tony Stark)</h3>
+            <p>Billionaire playboy and genius inventor, Tony Stark is the man behind Iron Man. He plays a key role in the Avengers.</p>
+            <p><strong>Interesting Fact:</strong> Robert Downey Jr. improvised the iconic line "I am Iron Man" at the end of the first Iron Man movie.</p>
+        </div>
+        <div class="character">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Chris_Hemsworth_as_Thor.jpg" alt="Thor">
+            <h3>Thor</h3>
+            <p>Thor, the God of Thunder, wields the powerful hammer Mjolnir and hails from Asgard.</p>
+            <p><strong>Interesting Fact:</strong> Chris Hemsworth gained 20 pounds of muscle to play Thor.</p>
+        </div>
+        <!-- Add more characters as needed -->
+    </section>
+
+    <section id="movie-trailers">
+        <h2>Movie Trailers</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/tmeOjFno6Do" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/6ZfuNTqbHE8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+
+    <section id="quote-of-the-day">
+        <h2>Quote of the Day</h2>
+        <p id="quote-display"></p>
+    </section>
+    <!-- script add -->
+<script>
+    const quotes = [
+    "I am Iron Man.",
+    "Avengers, Assemble!",
+    "I can do this all day.",
+    "We are Groot.",
+    "Hulk, Smash!",
+];
+
+function displayRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    document.getElementById('quote-display').innerText = quotes[randomIndex];
+}
+
+window.onload = displayRandomQuote;
+</script>
+    <section id="trivia-quiz">
+        <h2>MCU Trivia Quiz</h2>
+        <div class="quiz-question">
+            <p>1. Who is the villain in the first Avengers movie?</p>
+            <input type="radio" name="q1" value="Loki"> Loki<br>
+            <input type="radio" name="q1" value="Ultron"> Ultron<br>
+            <input type="radio" name="q1" value="Thanos"> Thanos<br>
+        </div>
+        <button onclick="checkAnswers()">Submit</button>
+        <p id="result"></p>
+    </section>
+    <!-- another java script -->
+     <script>
+        function checkAnswers() {
+    const answer = document.querySelector('input[name="q1"]:checked').value;
+    const result = document.getElementById('result');
+    
+    if (answer === "Loki") {
+        result.innerText = "Correct! Loki is the villain in the first Avengers movie.";
+    } else {
+        result.innerText = "Incorrect. The correct answer is Loki.";
+    }
+}
+     </script>
+
+</body>
+</html>
